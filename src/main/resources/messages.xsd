@@ -3,18 +3,18 @@
            targetNamespace="http://lanit.ru/chat/gen"
            elementFormDefault="qualified">
 
-    <xs:element name="addMessageRequest">
+    <xs:element name="sendMessageRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="message" type="tns:message" />
+                <xs:element name="message" type="tns:message"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="addMessageResponse">
+    <xs:element name="sendMessageResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="received" type="xs:boolean" />
+                <xs:element name="received" type="xs:boolean"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -25,5 +25,20 @@
             <xs:element name="text" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:element name="allMessagesRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="allMessagesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="messageList" type="tns:message" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>

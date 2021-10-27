@@ -3,7 +3,7 @@ package ru.lanit.chat.messages;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 import ru.lanit.chat.gen.Message;
@@ -11,7 +11,7 @@ import ru.lanit.chat.gen.Message;
 @Repository
 public class MessageRepository {
 
-    List<Message> messages = new LinkedList<>();
+    List<Message> messages = new ArrayList<>();
 
     @PostConstruct
     public void initData() {
@@ -21,8 +21,8 @@ public class MessageRepository {
         messages.add(message1);
 
         Message message2 = new Message();
-        message1.setFrom("User2");
-        message1.setText("Hi from User2");
+        message2.setFrom("User2");
+        message2.setText("Hi from User2");
         messages.add(message2);
     }
 
@@ -30,4 +30,7 @@ public class MessageRepository {
         return messages.add(newMessage);
     }
 
+    public List<Message> getMessages() {
+        return messages;
+    }
 }
