@@ -2,24 +2,30 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Spring Boot Thymeleaf Web Application</title>
+    <title>Chat</title>
 </head>
 <body>
-<h1>Welcome to Spring Boot Thymeleaf</h1>
+<h1>Welcome to Chat</h1>
 <p>
-    Hey there! <th:block th:text="${message}">message</th:block>
 
 <table>
     <tr>
-        <th>From</th>
-        <th>Text</th>
+        <td>From</td>
+        <td>Text</td>
     </tr>
     <tr th:each="message : ${messageList}">
-        <td th:text="${message.getFrom()}">User1</td>
+        <th th:text="${message.getFrom()}">User1</th>
         <td th:text="${message.getText()}">Hello</td>
     </tr>
 </table>
 
 </p>
+
+<form name="message" action="/send" method="post">
+    <input title="Name" type="text" name="name">
+    <input title="Text" type="text" name="text">
+    <button type="submit">Send</button>
+</form>
+
 </body>
 </html>
