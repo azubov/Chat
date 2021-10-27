@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -77,6 +78,30 @@
 					</sources>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.14.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<schemaLanguage>WSDL</schemaLanguage>
+					<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+					<generatePackage>ru.lanit.chat.client.gen</generatePackage>
+					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
+					<noFileHeader>true</noFileHeader>
+					<schemaIncludes>
+						<include>messages.wsdl</include>
+					</schemaIncludes>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
