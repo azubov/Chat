@@ -5,7 +5,7 @@
     <title>Chat</title>
 </head>
 <body>
-<h1>Welcome to Chat</h1>
+<h1>Welcome to Chat User1</h1>
 <p>
 
 <table>
@@ -21,8 +21,8 @@
 
 </p>
 
-<form name="message" action="/send" method="post">
-    <input title="Name" type="text" name="name">
+<form name="message" action="/chat/send" method="post">
+    <input title="From" type="text" name="from" th:value="${user}">
     <input title="Text" type="text" name="text">
     <button type="submit">Send</button>
 </form>
