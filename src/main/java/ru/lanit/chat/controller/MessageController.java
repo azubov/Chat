@@ -17,8 +17,8 @@ public class MessageController {
 
     @GetMapping("/{user}")
     public String allMessages(@PathVariable("user") String user, Model model) {
-        model.addAttribute("messageList", repository.getMessages());
         model.addAttribute("user", user);
+        model.addAttribute("messageList", repository.getMessages());
         return "messages";
     }
 

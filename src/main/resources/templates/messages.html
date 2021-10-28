@@ -5,10 +5,8 @@
     <title>Chat</title>
 </head>
 <body>
-<h1>Welcome to Chat User1</h1>
-<p>
 
-<table>
+<table id="chat">
     <tr>
         <td>From</td>
         <td>Text</td>
@@ -19,8 +17,6 @@
     </tr>
 </table>
 
-</p>
-
 <form name="message" action="/chat/send" method="post">
     <input title="From" type="text" name="from" th:value="${user}">
     <input title="Text" type="text" name="text">
@@ -28,4 +24,16 @@
 </form>
 
 </body>
+
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+
+var timeout = setInterval(reloadChat, 3000);
+function reloadChat () {
+
+     $('#chat').load('/chat/{user}');
+}
+</script>
+
+
 </html>
