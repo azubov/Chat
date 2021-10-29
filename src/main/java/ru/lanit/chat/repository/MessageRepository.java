@@ -1,4 +1,4 @@
-package ru.lanit.chat.messages;
+package ru.lanit.chat.repository;
 
 import org.springframework.stereotype.Repository;
 
@@ -11,7 +11,7 @@ import ru.lanit.chat.gen.Message;
 @Repository
 public class MessageRepository {
 
-    List<Message> messages = new ArrayList<>();
+    private final List<Message> messages = new ArrayList<>();
 
     @PostConstruct
     public void initData() {

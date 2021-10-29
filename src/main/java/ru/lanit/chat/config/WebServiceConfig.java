@@ -1,4 +1,4 @@
-package ru.lanit.chat.messages;
+package ru.lanit.chat.config;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -42,7 +42,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     }
 
     @Bean
-    public XsdSchema countriesSchema() {
+    public XsdSchema messagesSchema() {
         return new SimpleXsdSchema(new ClassPathResource("messages.xsd"));
     }
 }

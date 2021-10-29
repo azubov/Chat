@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import ru.lanit.chat.gen.Message;
-import ru.lanit.chat.messages.MessageRepository;
+import ru.lanit.chat.repository.MessageRepository;
 
 @Controller
 @RequestMapping("/chat")
